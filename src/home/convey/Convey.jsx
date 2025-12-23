@@ -66,7 +66,7 @@ export default function Convey() {
           <p className="about_owner_name font-semibold tracking-wide">
             {mockOwners[activeMessage]?.name}
           </p>
-
+          
           {/* ✅ MOCK DESIGNATION */}
           <p className="about_designation font-light text-gray-600">
             {mockOwners[activeMessage]?.designation}
