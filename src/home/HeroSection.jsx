@@ -137,11 +137,11 @@ export default function HeroSection() {
           className="absolute left-0 top-0 w-[75vw] h-[85vh] object-contain z-10 opacity-90"
         />
 
-        <div className="absolute top-0 right-6 sm:right-16 z-40 w-[265px] h-[330px] flex items-center justify-center">
-          <img src={herotopright} alt="cartoon" className="max-w-[75%]" />
+        <div className="absolute top-0 right-6 sm:right-16 z-40 w-[265px] h-[330px] flex bg-white/35 border-b-4 border-dashed border-white rounded-br-[100%] rounded-bl-[100%] items-center justify-center">
+          <img src={herotopright} alt="cartoon" className="max-w-[70%]" />
         </div>
 
-        <div className="absolute top-[18vh] left-[62%] -translate-x-1/2 z-30">
+        <div className="absolute top-[18vh] left-[65%] -translate-x-1/2 z-30">
           <img
             src={herogirl}
             alt="student"
