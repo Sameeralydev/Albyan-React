@@ -1,0 +1,88 @@
+.falling-container {
+  position: absolute;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.blocks-wrapper {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.falling-block2,
+.falling-block4,
+.falling-block5 {
+  position: absolute;
+  width: 250px;
+  height: 150px;
+  display: flex;
+  flex-direction: column; /* figure on top, label below */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 50px;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 0.4px;
+  user-select: none;
+}
+
+.falling-block2 {
+  background: #0D357B;
+  font-size: 3vh;
+}
+
+.falling-block4 {
+  background: #03273F;
+  font-size: 3vh;
+}
+
+.falling-block5 {
+  background: #373B83;
+  font-size: 3vh;
+}
+
+.falling-block2 .figure,
+.falling-block4 .figure,
+.falling-block5 .figure {
+  font-size: 4vh;
+  font-weight: 900;
+}
+
+.falling-block2 .label,
+.falling-block4 .label,
+.falling-block5 .label {
+  font-size: 3.5vh;
+  margin-top: 5px;
+}
+
+.falling-block,
+.falling-block3 {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  user-select: none;
+}
+
+.falling-block {
+  background: #08337A;
+  color: white;
+}
+
+.falling-block3 {
+  background: #fff;
+  color: white;
+}
+
+.canvas-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}

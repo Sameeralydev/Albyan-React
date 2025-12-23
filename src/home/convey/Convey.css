@@ -1,0 +1,158 @@
+.convey_wrapper {
+  background: #f2ffff;
+  width: 100%;
+}
+
+/* TITLES */
+.about_title {
+  font-family: 'RecoletaAlt';
+  font-size: 26px;
+  text-align: center;
+  color: red;
+  text-decoration: underline;
+}
+
+.about_desp {
+  font-family: 'RecoletaAlt';
+  font-size: 64px;
+  text-align: center;
+  color: #121a75;
+  text-decoration: underline;
+}
+
+/* BUTTONS */
+.about_btn {
+  padding: 14px 30px;
+  border-radius: 50px;
+  background: #dde6f3;
+  color: #121a75;
+  border: none;
+  font-family: 'Montserrat';
+  font-size: 16px;
+}
+
+.about_btn_active {
+  background: #121a75;
+  color: #fff;
+}
+
+/* CARD */
+.about_message_div {
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+  border-radius: 40px;
+}
+
+/* TEXT */
+.about_message_title {
+  font-family: 'RecoletaAlt';
+  font-size: 38px;
+  color: #121a75;
+}
+
+.about_message_desp {
+  font-size: 16px;
+  line-height: 28px;
+  margin-top: 20px;
+  width: 60%;
+}
+
+.about_owner_name {
+  font-size: 30px;
+  margin-top: 20px;
+  color: red;
+}
+
+.about_designation {
+  font-size: 18px;
+}
+
+/* IMAGE STACK */
+.image_wrap {
+  position: relative;
+  width: 320px;
+  height: 320px;
+}
+
+/* BLUE BACKGROUND */
+.owner_bg_img {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  height: 275px;
+  z-index: 1;
+}
+
+/* DOTTED ELLIPSE */
+.owner_ellipse_img {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  height: 280px;
+  z-index: 2;
+}
+
+/* OWNER IMAGE */
+/* .owner_img {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  height: 250px;
+  border-radius: 50%;
+  z-index: 3;
+} */
+
+/* ORBIT DOT */
+.message_yellow_img {
+  position: absolute;
+  top: 40%;
+  left: 85%;
+  width: 65px;
+  transform-origin: -115px center;
+  animation: rotateInCircle 8s linear infinite;
+  z-index: 4;
+}
+
+/* ROTATION */
+@keyframes rotateInCircle {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .about_desp {
+    font-size: 40px;
+  }
+
+  .about_message_div {
+    flex-direction: column;
+    padding: 30px;
+  }
+
+  .about_message_desp {
+    width: 100%;
+  }
+
+  .image_wrap {
+    margin-top: 40px;
+    width: 260px;
+    height: 260px;
+  }
+
+  .owner_bg_img,
+  .owner_ellipse_img {
+    height: 220px;
+  }
+
+  /* .owner_img {
+    height: 200px;
+  } */
+}
