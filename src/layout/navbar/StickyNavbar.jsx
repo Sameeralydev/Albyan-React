@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import navbarLinks from "../../Data/navbar";
+import navbarLinks from "../../data/navbar";
 
 export default function StickyNavbar() {
   const [show, setShow] = useState(false);
