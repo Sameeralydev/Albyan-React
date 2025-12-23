@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import navbarLinks from "../../data/navbar";
+import navbarLinks from "../../data/navbar.js";
 
 export default function HeroNavbar() {
   const [open, setOpen] = useState(false);
