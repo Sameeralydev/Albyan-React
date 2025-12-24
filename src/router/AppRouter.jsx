@@ -5,7 +5,7 @@ import About from "../components/about/About";
 import Services from "../components/services/Services";
 import Contact from "../components/contact/Contact";
 import Blog from "../components/blog/Blog";
-import Montessori from "../components/curriculum/montessori";
+import Montessori from "../components/curriculum/Montessori";
 
 const router = createBrowserRouter([
   {
