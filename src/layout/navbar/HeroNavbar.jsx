@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import navbarLinks from "./navbar";
+import logo from "../../assets/blueLogo.jpeg";
 
 export default function HeroNavbar() {
   const [open, setOpen] = useState(false);
@@ -17,7 +18,7 @@ export default function HeroNavbar() {
             <span className="hidden md:inline">|</span>
             <span>+92 302 3893333</span>
             <span className="hidden md:inline">|</span>
-            <span>3891 Ranchview Dr. Richardson, CA</span>
+            <span>122 B Model Town Gujranwala, Gujranwala, Pakistan</span>
           </div>
 
           <div className="flex items-center gap-4">
@@ -37,11 +38,11 @@ export default function HeroNavbar() {
 
       {/* ================= MAIN NAVBAR ================= */}
       <div className="relative w-full mt-3 sm:mt-4">
-        <nav className="bg-[#4CB0B3] flex items-center justify-between px-5 sm:px-10 h-16 sm:h-20 rounded-tr-[25px] rounded-tl-[25px] shadow-lg">
+        <nav className="bg-[#08347B] flex items-center justify-between px-5 sm:px-10 h-16 sm:h-20 rounded-tr-[25px] rounded-tl-[25px] shadow-lg">
 
           {/* LOGO */}
-          <Link to="/" className="text-xl sm:text-2xl font-bold text-green-900">
-            Al Byan
+          <Link to="/" className=" overflow-hidden">
+            <img src={logo} alt="Al Byan Logo" className=" max-w-20 relative top-1" />
           </Link>
 
           {/* DESKTOP LINKS */}
@@ -75,7 +76,7 @@ export default function HeroNavbar() {
                       <li key={i}>
                         <Link
                           to={child.link}
-                          className="block px-5 py-3 text-sm hover:bg-green-100 hover:text-green-800 transition"
+                          className="block px-5 py-3 text-sm hover:bg-[#013388]/30 hover:text-[green-800] transition"
                         >
                           {child.label}
                         </Link>
@@ -91,7 +92,7 @@ export default function HeroNavbar() {
           {/* DESKTOP BUTTON */}
           <Link
             to="/admission-now"
-            className="hidden lg:block bg-green-900 text-white px-8 py-2 rounded-full"
+            className="hidden lg:block bg-[#ffffff] text-[#013388] font-semibold px-8 py-2 rounded-full"
           >
             Admission Now
           </Link>

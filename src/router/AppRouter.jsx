@@ -5,6 +5,7 @@ import About from "../components/about/About";
 import Services from "../components/services/Services";
 import Contact from "../components/contact/Contact";
 import Blog from "../components/blog/Blog";
+import Montessori from "../components/curriculum/montessori";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,7 @@ const router = createBrowserRouter([
       { path: "/services", element: <Services /> },
       { path: "/contact", element: <Contact /> },
       { path: "/blog", element: <Blog /> },
+      { path: "/montessori-wing", element: <Montessori /> },
     ],
   },
 ]);

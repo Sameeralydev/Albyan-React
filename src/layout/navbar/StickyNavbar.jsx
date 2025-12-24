@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import navbarLinks from "./navbar";
+import logo from "../../assets/logo.png";
 
 export default function StickyNavbar() {
   const [show, setShow] = useState(false);
@@ -27,7 +28,7 @@ export default function StickyNavbar() {
 
         {/* LOGO */}
         <Link to="/" className="text-xl font-bold text-green-900">
-          Al Byan
+          <img src={logo} alt="Al Byan Logo" className=" max-w-[4vw] relative " />
         </Link>
 
         {/* DESKTOP MENU */}
@@ -37,7 +38,7 @@ export default function StickyNavbar() {
 
               <Link
                 to={item.link}
-                className="hover:text-green-800 flex items-center gap-1"
+                className="hover:text-[#08347b] flex items-center gap-1"
               >
                 {item.label}
                 {item.children && " ▾"}
@@ -64,7 +65,7 @@ export default function StickyNavbar() {
                     <li key={index}>
                       <Link
                         to={child.link}
-                        className="block px-5 py-3 text-sm hover:bg-green-100 hover:text-green-800"
+                        className="block px-5 py-3 text-sm hover:bg-[#08347B]/10 hover:text-[#08347b]"
                       >
                         {child.label}
                       </Link>
@@ -80,7 +81,7 @@ export default function StickyNavbar() {
         {/* DESKTOP BUTTON */}
         <Link
           to="/admission-now"
-          className="hidden lg:block bg-green-900 text-white px-6 py-2 rounded-full"
+          className="hidden lg:block bg-[#08347b] font-semibold text-white px-6 py-2 rounded-full"
         >
           Admission Now
         </Link>

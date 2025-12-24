@@ -9,21 +9,7 @@ import Message_yellow from "../../assets/message_yellow.png";
 export default function Convey() {
   const [activeMessage, setActiveMessage] = useState("Chairman");
 
-  // ✅ MOCK DISPLAY NAMES (real data untouched)
-  const mockOwners = {
-    Chairman: {
-      name: "John A. Williams",
-      designation: "Chairman of the Board",
-    },
-    Director: {
-      name: "Michael R. Stone",
-      designation: "Managing Director",
-    },
-    Principal: {
-      name: "Sarah L. Anderson",
-      designation: "Principal",
-    },
-  };
+  const current = messages[activeMessage];
 
   return (
     <div className="convey_wrapper pt-5 font-['Poppins']">
@@ -35,8 +21,8 @@ export default function Convey() {
         Our Leadership Messages
       </p>
 
-      {/* Buttons */}
-      <div className="d-flex justify-center flex gap-3 mt-4 mb-5">
+      {/* BUTTONS */}
+      <div className="flex justify-center gap-3 mt-4 mb-5">
         {Object.keys(messages).map((key) => (
           <button
             key={key}
@@ -45,39 +31,52 @@ export default function Convey() {
             }`}
             onClick={() => setActiveMessage(key)}
           >
-            {key} Message
+            {key}'s Message
           </button>
         ))}
       </div>
 
-      {/* Content Card */}
-      <div className="about_message_div">
+      {/* CONTENT */}
+      <div className="about_message_div flex flex-col lg:flex-row gap-8 items-center">
+
         {/* LEFT */}
-        <div className="col-lg-8 w-[150vh]">
+        <div className="lg:w-2/3 w-full">
           <p className="about_message_title font-['Playfair_Display'] text-[28px]">
-            {messages[activeMessage].title}
+            {current.title}
           </p>
 
-          <p className="about_message_desp font-light leading-relaxed">
-            {messages[activeMessage].description}
+          <p className="about_message_desp font-light w-[50vw] leading-relaxed mt-4">
+            {current.description}
           </p>
 
-          {/* ✅ MOCK NAME */}
-          <p className="about_owner_name font-semibold tracking-wide">
-            {mockOwners[activeMessage]?.name}
+          <p className="about_owner_name font-semibold tracking-wide mt-6">
+            {current.owner}
           </p>
-          
-          {/* ✅ MOCK DESIGNATION */}
+
           <p className="about_designation font-light text-gray-600">
-            {mockOwners[activeMessage]?.designation}
+            {current.designation}
           </p>
         </div>
 
-        {/* RIGHT IMAGE */}
-        <div className="col-lg-4 d-flex justify-content-center position-relative image_wrap">
+        {/* RIGHT IMAGE STACK */}
+        <div className="lg:w-1/3 w-full flex justify-center relative image_wrap">
+
           <img src={Owner_bg} className="owner_bg_img" alt="" />
           <img src={Owner_ellipse} className="owner_ellipse_img" alt="" />
-          <img src={Message_yellow} className="message_yellow_img" alt="" />
+
+          {/* MAIN IMAGE (INDIVIDUAL SIZE & POSITION) */}
+          <img
+            src={current.image}
+            alt=""
+            className="absolute z-30 object-contain"
+            style={{
+              height: current.imageStyle.height,
+              right: current.imageStyle.right,
+              bottom: current.imageStyle.bottom,
+            }}
+          />
+
+          <img src={Message_yellow} className="message_yellow_img z-30" alt="" />
         </div>
       </div>
     </div>

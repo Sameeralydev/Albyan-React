@@ -68,51 +68,60 @@ function SchoolCardSlider() {
 
     return () => window.removeEventListener("resize", calculateVisible);
   }, []);
-  
+
   useEffect(() => {
-  const interval = setInterval(() => {
-    setIndex(prev => prev + 1);
-  }, 2500);
+    const interval = setInterval(() => {
+      setIndex(prev => prev + 1);
+    }, 2500);
 
-  return () => clearInterval(interval);
-}, []);
+    return () => clearInterval(interval);
+  }, []);
 
-useEffect(() => {
-  if (index >= cards.length) {
-    const timeout = setTimeout(() => {
-      setIndex(0);
-    }, 500);
+  useEffect(() => {
+    if (index >= cards.length) {
+      const timeout = setTimeout(() => {
+        setIndex(0);
+      }, 500);
 
-    return () => clearTimeout(timeout);
-  }
-}, [index, cards.length]);
+      return () => clearTimeout(timeout);
+    }
+  }, [index, cards.length]);
 
   return (
     <div className="relative w-[720px] max-w-full">
-      <div ref={containerRef} className="relative w-[99vw] right-[45vw] ">
-        <div className="overflow-hidden">
-          <div
-            className="flex gap-6 transition-transform duration-500 ease-in-out"
-            style={{
-              transform: `translateX(-${index * cardWidth}px)`,
-            }}
-          >
-            {loopCards.map((card, i) => (
-              <div
-                key={i}
-                className={`relative min-w-[220px] rounded-3xl shadow-xl text-center z-50 border border-white ${card.color}`}
-              >
-                <h3 className="text-xl font-bold text-blue-900 mb-2">
-                  {card.title}
-                </h3>
-                <p className="text-sm text-gray-700 leading-relaxed">
-                  {card.desc}
-                </p>
-              </div>
-            ))}
-          </div>
+      <div ref={containerRef} className="relative w-[99vw] right-[45vw]">
+  <div className="overflow-hidden">
+    <div
+      className="flex gap-6 transition-transform duration-500 ease-in-out"
+      style={{
+        transform: `translateX(-${index * cardWidth}px)`,
+      }}
+    >
+      {loopCards.map((card, i) => (
+        <div
+          key={i}
+          className={`
+            relative min-w-[220px] p-5 rounded-2xl 
+            bg-white/90 backdrop-blur-md
+            shadow-[0_10px_30px_rgba(0,0,0,0.08)]
+            border border-gray-100
+            transition-all duration-300
+            hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,0,0,0.12)]
+          `}
+        >
+          <h3 className="text-[19px] text-center font-sans font-bold tracking-tight text-[#013388] mb-2">
+            {card.title}
+          </h3>
+
+          <p className="text-[13px] text-center font-semibold text-gray-700  leading-4">
+            {card.desc}
+          </p>
         </div>
-      </div>
+      ))}
+    </div>
+  </div>
+</div>
+
     </div>
   );
 }
@@ -134,7 +143,7 @@ export default function HeroSection() {
         <img
           src={heroabc}
           alt="pattern"
-          className="absolute left-0 top-0 w-[75vw] h-[85vh] object-contain z-10 opacity-90"
+          className="absolute left-0 -top-2 w-[75vw] h-[85vh] object-contain z-10 opacity-90"
         />
 
         <div className="absolute top-0 right-6 sm:right-16 z-40 w-[265px] h-[330px] flex bg-white/35 border-b-4 border-dashed border-white rounded-br-[100%] rounded-bl-[100%] items-center justify-center">
