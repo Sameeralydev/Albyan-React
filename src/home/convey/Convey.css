@@ -84,6 +84,7 @@
   margin: auto;
   height: 275px;
   z-index: 1;
+  overflow: hidden;
 }
 
 /* DOTTED ELLIPSE */
@@ -93,6 +94,7 @@
   margin: auto;
   height: 280px;
   z-index: 2;
+  overflow: hidden;
 }
 
 /* OWNER IMAGE */
